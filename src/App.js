@@ -2,9 +2,15 @@
 import './App.css';
 
 import { TextForm } from './components/TextForm';
+import { About } from './components/About';
 import { Navbar } from './components/Navbar';
 import { useState } from 'react';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  
+} from "react-router-dom";
 
 
 function App() {
@@ -14,10 +20,13 @@ function App() {
  }
   return (
     <>
+    <Router>
     <Navbar title="textUtils" aboutText="about"  mode={mode} toggleMode={onChange}/>
-    <div className='container my-4'><TextForm/></div> 
-    {/* <div className='container-fluid'><About/></div> */}
-    
+    <Routes>
+      <Route path='/about' element={<About/>} ></Route>
+      <Route path='/' element={<TextForm/>}></Route>
+    </Routes> 
+    </Router>
     </>
   );
 }

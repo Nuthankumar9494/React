@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const About = () => {
+export const About = () => {
   
     let [mystyle,setStyle]=useState({
         color:'black',
