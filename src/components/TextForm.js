@@ -42,7 +42,7 @@ export const TextForm = (props) => {
             <div className=' row text-center '>
                 <h2 style={{color:props.mode==='light'?'black':'white'}}>{props.titleTextArea}</h2>
                 <textarea id="mybox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode === 'light' ?'white':'grey'}} ></textarea>
-                <p style={{color:props.mode==='light'?'black':'white'}}>total words {text.split(" ").filter((element)=>{element.length!=0 }).length} and total characters {text.length}</p>
+                <p style={{color:props.mode==='light'?'black':'white'}}>total words {text.split(" ").filter((element)=>{return element !== "" }).length} and total characters {text.length}</p>
                 <h1 style={{color:props.mode==='light'?'black':'white'}}>Preview</h1>
                 <p style={{color:props.mode==='light'?'black':'white'}}>{text}</p>
             </div>
