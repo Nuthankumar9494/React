@@ -16,7 +16,13 @@ import {
 function App() {
  const [mode,setMode]=useState('light');
  let onChange=()=>{
-  mode === 'light' ? setMode('dark') : setMode('light');
+  if( mode === 'light'){
+     setMode('dark')
+     document.body.style.backgroundColor='grey'
+  } else{
+     setMode('light')
+     document.body.style.backgroundColor='white'
+  } ;
  }
   return (
     <>
@@ -24,8 +30,9 @@ function App() {
     <Navbar title="textUtils" aboutText="about"  mode={mode} toggleMode={onChange}/>
     <Routes>
       <Route path='/about' element={<About/>} ></Route>
-      <Route path='/' element={<TextForm/>}></Route>
-    </Routes> 
+      <Route path='/' element={<TextForm mode={mode}/>}></Route>
+    </Routes>
+ 
     </Router>
     </>
   );

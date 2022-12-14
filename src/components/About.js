@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 export const About = () => {
   
     let [mystyle,setStyle]=useState({
-        color:'black',
-        backgroundColor:'white'
+        color:'Dark',
+        backgroundColor:'black'
     });
     let onChange =()=>{
 //         if(mystyle.color === 'black'){
